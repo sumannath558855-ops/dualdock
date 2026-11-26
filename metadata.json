@@ -1,0 +1,6 @@
+{
+  "name": "DualDock",
+  "description": "Multi-account app cloner with isolated container slots, Android Work Profile integration, custom-badged Home Screen shortcuts, and PIN/biometric privacy lock.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

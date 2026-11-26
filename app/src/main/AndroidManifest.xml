@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <!-- Play-policy compliant package visibility for launchable apps & WhatsApp handoffs -->
+    <queries>
+        <intent>
+            <action android:name="android.intent.action.MAIN" />
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent>
+        <package android:name="com.whatsapp" />
+        <package android:name="com.whatsapp.w4b" />
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+            <data android:scheme="whatsapp" />
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.SEND" />
+            <data android:mimeType="text/plain" />
+        </intent>
+    </queries>
+
+    <application
+        android:name=".DualDockApplication"
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:hardwareAccelerated="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.MyApplication"
+        android:usesCleartextTraffic="false">
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:launchMode="singleTop"
+            android:theme="@style/Theme.MyApplication">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- Router for pinned Home Screen shortcuts -->
+        <activity
+            android:name=".container.ShortcutLaunchActivity"
+            android:exported="true"
+            android:excludeFromRecents="true"
+            android:launchMode="singleTop"
+            android:theme="@style/Theme.MyApplication">
+            <intent-filter>
+                <action android:name="com.aistudio.dualdock.ACTION_LAUNCH_CLONE" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <!-- 8 Isolated Multi-Process Container Slots (independent WebView data directories & cookies) -->
+        <activity
+            android:name=".container.CloneSlot1Activity"
+            android:exported="false"
+            android:process=":slot_1"
+            android:taskAffinity="com.aistudio.dualdock.slot1"
+            android:configChanges="orientation|screenSize|keyboardHidden|smallestScreenSize|screenLayout"
+            android:theme="@style/Theme.MyApplication" />
+
+        <activity
+            android:name=".container.CloneSlot2Activity"
+            android:exported="false"
+            android:process=":slot_2"
+            android:taskAffinity="com.aistudio.dualdock.slot2"
+            android:configChanges="orientation|screenSize|keyboardHidden|smallestScreenSize|screenLayout"
+            android:theme="@style/Theme.MyApplication" />
+
+        <activity
+            android:name=".container.CloneSlot3Activity"
+            android:exported="false"
+            android:process=":slot_3"
+            android:taskAffinity="com.aistudio.dualdock.slot3"
+            android:configChanges="orientation|screenSize|keyboardHidden|smallestScreenSize|screenLayout"
+            android:theme="@style/Theme.MyApplication" />
+
+        <activity
+            android:name=".container.CloneSlot4Activity"
+            android:exported="false"
+            android:process=":slot_4"
+            android:taskAffinity="com.aistudio.dualdock.slot4"
+            android:configChanges="orientation|screenSize|keyboardHidden|smallestScreenSize|screenLayout"
+            android:theme="@style/Theme.MyApplication" />
+
+        <activity
+            android:name=".container.CloneSlot5Activity"
+            android:exported="false"
+            android:process=":slot_5"
+            android:taskAffinity="com.aistudio.dualdock.slot5"
+            android:configChanges="orientation|screenSize|keyboardHidden|smallestScreenSize|screenLayout"
+            android:theme="@style/Theme.MyApplication" />
+
+        <activity
+            android:name=".container.CloneSlot6Activity"
+            android:exported="false"
+            android:process=":slot_6"
+            android:taskAffinity="com.aistudio.dualdock.slot6"
+            android:configChanges="orientation|screenSize|keyboardHidden|smallestScreenSize|screenLayout"
+            android:theme="@style/Theme.MyApplication" />
+
+        <activity
+            android:name=".container.CloneSlot7Activity"
+            android:exported="false"
+            android:process=":slot_7"
+            android:taskAffinity="com.aistudio.dualdock.slot7"
+            android:configChanges="orientation|screenSize|keyboardHidden|smallestScreenSize|screenLayout"
+            android:theme="@style/Theme.MyApplication" />
+
+        <activity
+            android:name=".container.CloneSlot8Activity"
+            android:exported="false"
+            android:process=":slot_8"
+            android:taskAffinity="com.aistudio.dualdock.slot8"
+            android:configChanges="orientation|screenSize|keyboardHidden|smallestScreenSize|screenLayout"
+            android:theme="@style/Theme.MyApplication" />
+
+        <!-- Unlimited Dynamic Vault Pool Process for Clones #9 to Infinity -->
+        <activity
+            android:name=".container.CloneUnlimitedSlotActivity"
+            android:exported="false"
+            android:process=":slot_unlimited"
+            android:taskAffinity="com.aistudio.dualdock.unlimited"
+            android:configChanges="orientation|screenSize|keyboardHidden|smallestScreenSize|screenLayout"
+            android:theme="@style/Theme.MyApplication" />
+
+        <!-- Official Android Managed Profile (Work Profile) Device Admin Receiver -->
+        <receiver
+            android:name=".system.DualDockAdminReceiver"
+            android:description="@string/device_admin_description"
+            android:exported="true"
+            android:label="@string/device_admin_label"
+            android:permission="android.permission.BIND_DEVICE_ADMIN">
+            <meta-data
+                android:name="android.app.device_admin"
+                android:resource="@xml/device_admin_receiver" />
+            <intent-filter>
+                <action android:name="android.app.action.DEVICE_ADMIN_ENABLED" />
+            </intent-filter>
+        </receiver>
+    </application>
+
+</manifest>

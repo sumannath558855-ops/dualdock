@@ -1,0 +1,48 @@
+<resources>
+    <string name="app_name">DualDock</string>
+    <string name="device_admin_label">DualDock Work Space</string>
+    <string name="device_admin_description">Creates an isolated Android Work Profile so you can run a separate native copy of your apps with independent accounts and data.</string>
+
+    <!-- Navigation -->
+    <string name="nav_vault">Vault</string>
+    <string name="nav_apps">Clone</string>
+    <string name="nav_workspace">Work Space</string>
+    <string name="nav_security">Security</string>
+
+    <!-- Content Descriptions -->
+    <string name="cd_lock_vault">Lock DualDock vault</string>
+    <string name="cd_add_clone">Clone an app</string>
+    <string name="cd_clone_options">Clone options</string>
+    <string name="cd_clone_locked">Protected by privacy lock</string>
+    <string name="cd_search_apps">Search apps</string>
+    <string name="cd_clear_search">Clear search</string>
+    <string name="cd_biometric_unlock">Unlock with biometrics</string>
+    <string name="cd_backspace">Delete last digit</string>
+    <string name="cd_web_back">Go back</string>
+    <string name="cd_web_forward">Go forward</string>
+    <string name="cd_web_reload">Reload page</string>
+    <string name="cd_web_desktop_toggle">Toggle desktop mode</string>
+    <string name="cd_web_clear_session">Clear session data</string>
+    <string name="cd_web_close">Close container</string>
+    <string name="cd_web_share">Share or send to WhatsApp</string>
+    <string name="cd_web_collapse_bar">Hide toolbar</string>
+    <string name="cd_web_expand_bar">Show DualDock toolbar</string>
+
+    <!-- Vault & Actions -->
+    <string name="vault_subtitle">Isolated Multi-Account Spaces</string>
+    <string name="vault_empty_title">Your Vault Is Ready</string>
+    <string name="vault_empty_desc">Tap any popular app below or choose an installed app to launch a separate, isolated account immediately.</string>
+    <string name="action_clone_app">Clone App</string>
+    <string name="action_pin_shortcut">Add to Home Screen</string>
+    <string name="action_launch">Open Space</string>
+    <string name="action_edit">Edit Name &amp; Badge</string>
+    <string name="action_delete">Remove Clone</string>
+    <string name="action_clear_session">Clear Session Cookies</string>
+
+    <!-- Security -->
+    <string name="biometric_prompt_title">Unlock DualDock</string>
+    <string name="biometric_prompt_subtitle">Verify your identity to access protected spaces</string>
+    <string name="biometric_prompt_negative">Use Vault PIN</string>
+    <string name="pin_error_wrong">Incorrect PIN. Try again.</string>
+    <string name="pin_error_mismatch">PINs did not match. Enter again.</string>
+</resources>
